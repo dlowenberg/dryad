@@ -9,7 +9,7 @@ class SolrInstance
 
   SOLR_VERSION = '5.2.1'.freeze
   CONF_DIR = 'spec/config/solr/conf'.freeze
-  BLACKLIGHT_YML = 'config/blacklight.yml'.freeze
+  BLACKLIGHT_YML = "#{ConfigHelp.config_path_from_root}/blacklight.yml".freeze
   COLLECTION_NAME = 'geoblacklight'.freeze
 
   def initialize

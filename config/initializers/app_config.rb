@@ -1,6 +1,6 @@
 require 'ostruct'
 require 'yaml'
-ac = YAML.load_file(File.join(Rails.root, 'config', 'app_config.yml'))[Rails.env]
+ac = YAML.load_file(File.join(ConfigHelp.config_full_path, 'app_config.yml'))[Rails.env]
 
 # this will make the config available under the APP_CONFIG constant and methods like APP_CONFIG.metadata_engines
 APP_CONFIG = ac.to_ostruct
