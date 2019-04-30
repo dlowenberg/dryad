@@ -313,7 +313,7 @@ GEM
     exception_notification (4.3.0)
       actionmailer (>= 4.0, < 6)
       activesupport (>= 4.0, < 6)
-    excon (0.62.0)
+    excon (0.64.0)
     execjs (2.7.0)
     ezid-client (1.8.0)
       hashie (~> 3.4, >= 3.4.3)
@@ -521,6 +521,8 @@ GEM
       slop (~> 3.0)
     public_suffix (2.0.5)
     rack (1.6.11)
+    rack-proxy (0.6.5)
+      rack
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.2.11)
@@ -542,6 +544,11 @@ GEM
       rails-deprecated_sanitizer (>= 1.0.1)
     rails-html-sanitizer (1.0.4)
       loofah (~> 2.2, >= 2.2.2)
+    rails-reverse-proxy (0.9.1)
+      addressable
+      rack
+      rack-proxy
+      rails
     railties (4.2.11)
       actionpack (= 4.2.11)
       activesupport (= 4.2.11)
@@ -552,7 +559,7 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
-    rdf (3.0.10)
+    rdf (3.0.12)
       hamster (~> 3.0)
       link_header (~> 0.0, >= 0.0.8)
     rdf-aggregate-repo (2.2.1)
@@ -584,7 +591,7 @@ GEM
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
     retriable (3.1.2)
-    rinku (2.0.5)
+    rinku (2.0.6)
     rsolr (1.1.2)
       builder (>= 2.1.2)
     rspec (3.8.0)
