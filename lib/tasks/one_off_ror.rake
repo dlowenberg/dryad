@@ -6,6 +6,9 @@ namespace :one_offs do
 
   desc 'Process all of the TSV files'
   task process_ror_tsv: :environment do
+    start_time = Time.now
+    p "Loading Journal, Author and affiliation info from TSV files in tmp/Results"
+
     crosswalk = CSV.read("#{ROOT}/Crosswalk.csv", headers: true)
 
     entries = []
@@ -18,6 +21,7 @@ namespace :one_offs do
       end
     end
 
+    curr_doi = ''
     entries.map do |entry|
       matched = crosswalk.select { |cw| cw['ArticleDOI']&.gsub('doi:', '') == entry['DOI']&.gsub('doi:', '') }.first
       next unless entry['DOI'].present? && matched.present?
@@ -26,13 +30,15 @@ namespace :one_offs do
       p "****** NO MATCH FOR: (#{entry['DOI']}) #{entry['title']}" unless identifier.present?
       next unless identifier.present?
 
-      p "Matched: #{entry['title']} -- Journal DOI: #{entry['DOI']} => Dataset DOI: #{identifier.to_s}"
+      p "Matched: #{entry['title']} -- Journal DOI: #{entry['DOI']} => Dataset DOI: #{identifier.to_s}" unless curr_doi == entry['DOI']
+      curr_doi = entry['DOI']
       handle_journal_name(identifier: identifier, hash: entry)
       handle_journal_doi(identifier: identifier, hash: entry)
 
       next unless identifier.latest_resource.present?
       handle_author(resource: identifier.latest_resource, hash: entry)
     end
+    p "DONE! Elapsed time: #{(Time.now - start_time).strftime('%H:%M:%S')}"
   end
 
   def handle_author(resource:, hash:)
