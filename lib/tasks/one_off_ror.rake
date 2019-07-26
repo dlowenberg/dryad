@@ -7,7 +7,7 @@ namespace :one_offs do
   desc 'Process all of the TSV files'
   task process_ror_tsv: :environment do
     start_time = Time.now
-    p "Loading Journal, Author and affiliation info from TSV files in tmp/Results"
+    p "Loading Journal, Author and Affiliation info from TSV files in tmp/Results"
 
     crosswalk = CSV.read("#{ROOT}/Crosswalk.csv", headers: true)
 
@@ -20,6 +20,7 @@ namespace :one_offs do
         row['selected']&.downcase == 'true' && row['tokenIndex'] == '1'
       end
     end
+    p "Found #{entries.length} entries to process."
 
     curr_doi = ''
     entries.map do |entry|
