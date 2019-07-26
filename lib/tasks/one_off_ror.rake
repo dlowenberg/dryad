@@ -12,6 +12,7 @@ namespace :one_offs do
     crosswalk = CSV.read("#{ROOT}/Crosswalk.csv", headers: true)
 
     entries = []
+    dois_to_skip = []
     Dir.entries(ROOT).each do |f|
       next unless f.end_with?('.tsv')
 
@@ -24,10 +25,12 @@ namespace :one_offs do
 
     curr_doi = ''
     entries.map do |entry|
+      next if dois_to_skip.include?(entry['DOI'])
       matched = crosswalk.select { |cw| cw['ArticleDOI']&.gsub('doi:', '') == entry['DOI']&.gsub('doi:', '') }.first
       next unless entry['DOI'].present? && matched.present?
 
       identifier = StashEngine::Identifier.where("stash_engine_identifiers.identifier like ?", "%#{matched['PackageDOI'].gsub('doi:', '')}").first
+      dois_to_skip << entry['DOI'] unless identifier.present?
       p "****** NO MATCH FOR: (#{entry['DOI']}) #{entry['title']}" unless identifier.present?
       next unless identifier.present?
 
