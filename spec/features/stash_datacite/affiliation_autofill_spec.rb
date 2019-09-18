@@ -8,7 +8,8 @@ RSpec.feature 'AffiliationAutofill', type: :feature do
   include Mocks::Ror
 
   before(:each) do
-    mock_solr!
+    WebMock.disable_net_connect!(allow_localhost: true)
+    mock_solr! # needed to navigate from homepage
     mock_ror!
     @user = create(:user)
     sign_in(@user)
