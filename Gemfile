@@ -86,7 +86,7 @@ group :test do
   gem 'rspec-collection_matchers'
   gem 'rspec-rails'
   # The next generation developer focused tool for automated testing of webapps (https://github.com/SeleniumHQ/selenium)
-  gem 'selenium-webdriver', '~> 3.142.0'
+  gem 'selenium-webdriver', '~> 3.142.4'
   # Making tests easy on the fingers and eyes (https://github.com/thoughtbot/shoulda)
   gem 'shoulda'
   # Code coverage for Ruby 1.9+ with a powerful configuration library and automatic merging of coverage across test suites (http://github.com/colszowka/simplecov)
