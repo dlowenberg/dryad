@@ -62,12 +62,13 @@ Upgrades and enhanced system functions will be ongoing as a way to continually i
 -  UCLA
 -  UC Merced
 -  UC Riverside
+-  UC Santa Barbara
 -  UC San Francisco
 -  UC San Diego
 -  UC Santa Cruz
 -  University of Illinois, Urbana-Champagne
 -  University of New Mexico
--  Victoria University
+-  Victoria University, Melbourne
 -  Yale University
 
 <p>Any research institution that supports the educational, scientific, and charitable mission of Dryad is eligible to become a member.</p>
