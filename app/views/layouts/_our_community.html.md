@@ -56,6 +56,7 @@ Upgrades and enhanced system functions will be ongoing as a way to continually i
 -  University of California, California Digital Library
 -  Lawrence Berkeley National Lab
 -  North Carolina State University
+-  Stanford University
 -  UC Berkeley
 -  UC Davis
 -  UC Irvine
@@ -71,7 +72,7 @@ Upgrades and enhanced system functions will be ongoing as a way to continually i
 -  Victoria University, Melbourne
 -  Yale University
 
-<p>Any research institution that supports the educational, scientific, and charitable mission of Dryad is eligible to become a member.</p>
+<p>Any research institution that supports the educational, scientific, and charitable mission of Dryad is eligible to become a member. We are also thrilled to have the Chan Zuckerberg Initiative on board as our first philanthropic member covering the cost of data publishing for their grantees. </p>
 
 <h3>Institutional Membership benefits include:</h3>
 
