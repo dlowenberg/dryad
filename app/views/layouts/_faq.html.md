@@ -56,3 +56,11 @@ of the services provided by Merritt, see this document: <a href="https://merritt
 
 <h2 id="delete">Can I delete my data?</h2>
 <p>Data deposited in Dryad is intended to remain permanently archived and available. Removal of a deposited dataset is considered an exceptional action which should be requested and fully justified by the original contributor (e.g., if there are concerns over privacy or data ownership). To request the withdrawal of data from Dryad, contact <a href="mailto:help@datadryad.org">help@datadryad.org</a>.</p>
+
+<h2 id="search">How can I best construct search terms when exploring data in Dryad?</h2>
+<p> When searching in the Dryad user interface, the normal behavior is to treat each search term as being combined by AND. A search for `cat dog` will return only datasets that contain both cat and dog.
+Search terms may have a wildcard * appended. A search for cat* will return datasets that contain cat, catch, catsup, etc.
+Search terms may be negated with a minus sign. A search for cat -dog will return datasets that contain cat, but exclude any datasets that also contain dog.
+Phrases may be searched by using quotes. A search for "dog my cats" will only return documents that contain this specific phrase, and not documents that contain the individual terms.
+Proximity searches may be performed. To find documents containing dog within four words of cat, search for "dog cat"~4
+Searches may also be further constrained by the filters displayed on the left side of the search results screen.</p>
